@@ -1,0 +1,56 @@
+In this exercise, we will study Java Lambda expression and Stream API. 
+
+[Step 1] Exercising basic Lambda expression 
+Review the example code about lambda expression in the lecture slide #8, and add a set of code for the following expressions. (Type of x and y is "double".)
+1) Calculate the third power - Use "(x * x * x)".
+2) Calculate squre root - Use the "Math.sqrt()" method.
+3) Calculate value of "x" raised to the power of "y" - Use the "Math.pow()" method.
+4) PassFailService that has "showMessage(int score)" to tell "Pass" if  score >= 70, otherwise "Fail".
+- Type of parameter is "double".
+- Remove the existing code and show result of just your code only.
+* File name : "LambdaExpressionExercise.java"
+[Step 2] Exercising basic Stream operations 
+
+Review the example code about Java stream in the lecture slide #17, and add a set of code for the following operations. 
+1) There is a List<String> as below.
+List<String> number = Arrays.asList("2","3","4","5"); 
+Create a stream from the list, and multiply 2 to each element using map operation, and pass it to print all elements.
+
+2) There are two List<String>s as below.
+    List<String> stoplist = Arrays.asList("is", "was", "to", "have", "in", "on");
+    List<String> teststr = Arrays.asList("The", "2019-20", "coronavirus", "pandemic", "was", "confirmed", "to", "have", "spread", "to", "Japan", "on", "16", "January", "2020", ".");
+Create a stream from the "teststr",  filter some words (remove the words in the stoplist and  words that have non-alphabet characters) , and collect it as a List for printing out.
+
+3) Sort stream of "teststr" of 2) with reverse order and print it.
+- Remove the existing code and show result of just your code only.
+* File name : "JavaStreamExercise.java"
+[Step 3] Write WordCount code using Stream
+
+Write code to read a text file and count frequence of words in the file.
+Hint:
+- Read lines from stream of the file.
+- Get words from the lines using "flatMap" stream operation and "split" method
+- Filter the words - 0 length, non-alphabet words
+- Assign count number 1 to each word using SimpleEntry<> object in map operation
+-  Generate result using "collect" operation with "toMap" method of the Collectors class.
+* File name : "WordCount.java"
+
+[Step 4] Comparison Performance of Calculating PI value 
+
+Write code to calculate PI value using Java Stream. You can make two versions, one is using parallel stream, the other sequential stream. 
+Compare performance of the two version.
+Hint for code:
+- You can use the map operation in the below: 
+  mapToDouble((a) -> 4.0 * 1.0 / n * (sqrt(pow(random(),2)+pow(random(),2)) <= 1 ? 1 : 0))
+- Size of IntStream : 99999999
+- Show the followings: PI value calculated, Difference with PI value in Math, Ratio of running time 
+* File name : "PiCalc.java"
+-----------------------------------------------------
+<Running Result: Example>
+JavaStream> java PiCalc
+Running time by parallel exec. = 651971300
+3.1414627914146274 delta-abs: 1.2986217516575138E-4
+Running time by sequential exec. = 8087416800
+3.1415660714156606 delta-abs: 2.6582174132538938E-5
+Ratio = 12.40455952585643
+-----------------------------------------------------

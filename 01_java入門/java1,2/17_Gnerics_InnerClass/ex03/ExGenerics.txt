@@ -1,0 +1,2 @@
+
+If you don't use generics, the ArrayList type does not limit the type of elements that can be stored. (Usually, generics are used to store variable types that can be stored.) However, in reality, Array list cannot contain multiple element types, and an error occurs at runtime.

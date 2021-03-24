@@ -1,0 +1,6 @@
+
+Main method variable k is passed to the Mymthod.
+
+But passed variable k is copy.
+
+So, Main method variable k is not change when variable k is changed  in the myMthod.

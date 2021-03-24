@@ -1,0 +1,5 @@
+Q1: methodTwo overrides.
+
+Q2:methodFour hides.
+
+Q3:other methods are compile error.
